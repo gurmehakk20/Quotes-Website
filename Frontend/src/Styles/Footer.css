@@ -1,0 +1,21 @@
+.footer {
+  background-color: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(6px);
+  border-top: 1px solid #cbf3e8;
+  padding: 2rem 0;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.footer-text {
+  font-family: 'Inter', sans-serif;
+  color: #555;
+  font-size: 0.95rem;
+}

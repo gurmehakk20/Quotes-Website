@@ -1,0 +1,83 @@
+/* Navigation.css */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #b2f5ea; /* mint-100 */
+}
+
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  height: 64px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.heart-icon {
+  width: 32px;
+  height: 32px;
+  color: #38b2ac; /* mint-500 */
+}
+
+.logo-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2d3748; /* gray-800 */
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.nav-link {
+  color: #4a5568; /* gray-600 */
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #38b2ac; /* mint-600 */
+}
+
+.navbar-mobile {
+  display: none;
+}
+
+.menu-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #4a5568;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-links {
+    display: none;
+  }
+
+  .navbar-mobile {
+    display: block;
+  }
+}

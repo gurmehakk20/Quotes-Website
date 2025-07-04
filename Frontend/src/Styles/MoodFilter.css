@@ -1,0 +1,86 @@
+.mood-container {
+  background: rgba(255, 255, 255, 0.6);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  border: 1px solid #cbf3e8;
+  max-width: 700px;
+  margin: 2rem auto;
+}
+
+.mood-title {
+  font-size: 1.2rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 16px;
+  color: #444;
+}
+
+.mood-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.mood-btn {
+  border: none;
+  padding: 16px;
+  border-radius: 18px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.mood-btn:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+}
+
+.mood-btn.selected {
+  outline: 2px solid #76e1c7;
+  transform: scale(1.05);
+}
+
+.emoji {
+  font-size: 1.5rem;
+  margin-bottom: 4px;
+}
+
+.label {
+  font-size: 0.7rem;
+  font-family: 'Inter', sans-serif;
+  color: #555;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.mood-btn:hover .label {
+  opacity: 1;
+}
+
+/* Gradient Backgrounds */
+.yellow-orange {
+  background: linear-gradient(to bottom right, #fef3bd, #fbc491);
+}
+.blue-indigo {
+  background: linear-gradient(to bottom right, #dbeafe, #c7d2fe);
+}
+.purple-pink {
+  background: linear-gradient(to bottom right, #e9d5ff, #fbcfe8);
+}
+.red-pink {
+  background: linear-gradient(to bottom right, #fecaca, #fbcfe8);
+}
+.green-emerald {
+  background: linear-gradient(to bottom right, #bbf7d0, #a7f3d0);
+}
