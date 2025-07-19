@@ -1,32 +1,31 @@
 import './App.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import Navbar from './Components/Navbar.jsx'
-import Home from './Pages/Home.jsx'
-import Explore from './Pages/Explore';
-import AddQuote from './Pages/AddQuote';
-import Profile from './Pages/Profile';
-import Login from './Pages/Login';
-import QuoteDetail from './Pages/QuoteDetail';
-import NotFound from './Pages/Error';
-
+import SubmitQuote from './Pages/SubmitQuote'
+import ProtectedRoute from './Components/ProtectedRoute'
+import Home from './Pages/Home'
+import Login from './Pages/Login'
+import AllQuotes from './Pages/AllQuotes'
+import PublicQuotes from './Pages/PublicQuotes'
 
 function App() {
-
   return (
-    <>
-      <BrowserRouter>
-      <Navbar />
+    
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/explore" element={<Explore />} />
-        <Route path="/add" element={<AddQuote />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/quote/:id" element={<QuoteDetail />} />
-        <Route path="*" element={<Error />} />
+        {/* <Route path="/quotes" element={<AllQuotes />} /> */}
+        
+        <Route
+          path="/submit"
+          element={
+            <ProtectedRoute>
+              <SubmitQuote />
+            </ProtectedRoute>
+          }
+        />
+
+        <Route path="/public" element={<PublicQuotes />} />
       </Routes>
-    </BrowserRouter>
-    </>
   )
 }
 

@@ -24,6 +24,7 @@ const Home = () => {
           <p className="hero-subtitle">
             Find the perfect quote to match your mood and brighten your day
           </p>
+          
         </div>
       </section>
 
