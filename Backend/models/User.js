@@ -22,7 +22,14 @@ const userSchema = new mongoose.Schema({
     type: String,
     enum: ["user", "admin"],
     default: "user"
-  }
+  },
+  savedQuotes: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Quote'
+    }
+  ]
+
 }, { timestamps: true });
 
 module.exports = mongoose.model("User", userSchema);

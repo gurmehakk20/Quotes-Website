@@ -28,8 +28,9 @@ const PublicQuotes = () => {
         <div className="quotes-grid">
           {quotes.map((quote, index) => (
             <QuoteCard
-              key={index}
-              text={quote.quote}
+              key={quote._id || index}
+              _id={quote._id}
+              text={quote.text}
               author={quote.author}
               category={quote.category}
               submittedBy="API Ninjas"

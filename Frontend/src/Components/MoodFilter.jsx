@@ -1,9 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import '../Styles/MoodFilter.css'
 
-const MoodFilter = () => {
-  const [selectedMood, setSelectedMood] = useState(null);
-
+const MoodFilter = ({ onMoodSelect, selectedMood }) => {
   const moods = [
     { emoji: '😄', label: 'Happy', colorClass: 'yellow-orange' },
     { emoji: '😢', label: 'Sad', colorClass: 'blue-indigo' },
@@ -19,7 +17,7 @@ const MoodFilter = () => {
         {moods.map((mood) => (
           <button
             key={mood.label}
-            onClick={() => setSelectedMood(mood.label)}
+            onClick={() => onMoodSelect && onMoodSelect(mood.label)}
             className={`mood-btn ${mood.colorClass} ${selectedMood === mood.label ? 'selected' : ''}`}
           >
             <div className="emoji">{mood.emoji}</div>

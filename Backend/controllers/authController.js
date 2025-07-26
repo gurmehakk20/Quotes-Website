@@ -38,22 +38,22 @@ const login = async (req, res) => {
         const isMatch = await bcrypt.compare(password, existingUser.password);
         if (!isMatch) return res.status(400).json({ msg: "Invalid credentials" });
 
-        // Create JWT
+        // Create JWT with _id to match MongoDB structure
         const token = jwt.sign(
-            { id: existingUser._id, email: existingUser.email, role: existingUser.role || "User" },
+            { _id: existingUser._id, email: existingUser.email, role: existingUser.role || "User" },
             process.env.JWT_SECRET,
             { expiresIn: "7d" }
         )
 
         res.status(200).json({
-      user: {
-        _id: existingUser._id,
-        email: existingUser.email,
-        name: existingUser.name,
-        role: existingUser.role || "User"
-      },
-      token,
-    })
+            user: {
+                _id: existingUser._id,
+                username: existingUser.username,
+                email: existingUser.email,
+                role: existingUser.role || "User"
+            },
+            token,
+        })
 
     }
     catch(err) {

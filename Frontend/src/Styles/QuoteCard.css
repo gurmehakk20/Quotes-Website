@@ -12,15 +12,47 @@
   animation: fadeIn 0.8s ease;
 }
 
+.quote-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
 .quote-icon {
-  position: absolute;
-  top: 1rem;
-  left: 1.2rem;
   font-size: 2rem;
   height: 2rem;
   width: 2rem;
   color: #a0f0da;
   transform: rotate(180deg);
+}
+
+.save-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: #28c4aa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-button:hover {
+  background: rgba(40, 196, 170, 0.1);
+  transform: scale(1.1);
+}
+
+.save-button.saved {
+  color: #28c4aa;
+}
+
+.save-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
 }
 
 .quote-text {
@@ -31,7 +63,6 @@
   font-optical-sizing: auto;
   /* font-weight: <weight>; */
   font-style: normal;
-  padding-left: 2.5rem;
   margin-bottom: 1.5rem;
 }
 
